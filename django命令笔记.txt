@@ -1,6 +1,6 @@
 
 
-
+django-admin.py startproject mysite				创建一个项目
 
 python manage.py startapp (模型(app)名称)		创建新app
 

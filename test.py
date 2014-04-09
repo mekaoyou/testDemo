@@ -221,13 +221,38 @@ def getNum(p_int):
     return "玖";
 
 import math;
-print math.sqrt((3**2 + 4**2));
+# print math.sqrt((3**2 + 4**2));
 
-print "changed again";
-
-
+# print "changed again";
 
 
+
+
+import os;
+
+rootDir = "D:\\JavaWorkspace\\WebRoot\\";
+txtFile = "E:\\txtFile.txt";
+
+targetFile = open(txtFile,'a');
+
+def getAllFiles(dir):
+  for lists in os.listdir(dir):
+    path = os.path.join(dir,lists);
+    if os.path.isdir(path):
+      getAllFiles(path);
+    else:
+      writeToFile(path);
+      print path[path.rfind("\\")+1:];
+
+def writeToFile(dir):
+  fromFile = open(dir);
+  targetFile.write(dir[dir.rfind("\\")+1:] + "\n\n");
+  targetFile.write(fromFile.read());
+  targetFile.write("\n\n");
+  fromFile.close();
+
+
+print getAllFiles(rootDir);
 
 
 
