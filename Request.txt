@@ -1,0 +1,4 @@
+request.path				除域名以外的请求路径，以正斜杠开头		"/hello/"
+request.get_host()			主机名（比如，通常所说的域名）			"127.0.0.1:8000" or "www.example.com"
+request.get_full_path()		请求路径，可能包含查询字符串			"/hello/?print=true"
+request.is_secure()			如果通过HTTPS访问，则此方法返回True，否则返回False	True 或者 False

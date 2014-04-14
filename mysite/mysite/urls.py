@@ -12,4 +12,5 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^time/$',current_datetime),
+    url(r'^test/$',test_request)
 )
