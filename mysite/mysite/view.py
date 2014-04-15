@@ -8,9 +8,9 @@ def current_datetime(request):
 	return render_to_response('current_datetime.html',locals());
 
 def test_request(request):
-	values = request.META.items()
-	values.sort()
-	html = []
-	for k,v in values:
-		html.append('<tr><td>%s</td><td>%s</td></tr>' %(k,v))
-	return HttpResponse('<table>%s</table>' % '\n'.join(html));
+	metaValues = request.META.items()
+	metaValues.sort()
+	# html = []
+	# for k,v in values:
+	# 	html.append('<tr><td>%s</td><td>%s</td></tr>' %(k,v))
+	return render_to_response('request_meta.html',locals());
