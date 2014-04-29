@@ -226,8 +226,6 @@ import math;
 # print "changed again";
 
 
-
-
 import os;
 
 rootDir = "D:\\JavaWorkspace\\WebRoot\\";
@@ -252,9 +250,33 @@ def writeToFile(dir):
   fromFile.close();
 
 
-print getAllFiles(rootDir);
+# print getAllFiles(rootDir);
 
 
+def docString_test():
+  '''This is a DocString test function,
 
+  enjoy it.'''
 
+# print docString_test.__doc__
+# help(docString_test)
 
+def list_enumerate():
+  teams = ["aaaa","bbbb","cccc","ddddd"];
+  for index,team in enumerate(teams):
+    print index,team;
+
+  ls = ["xxxx","oooo"];
+  for a,b in zip(teams,ls):
+    print a + " vs. " + b;
+
+# list_enumerate();
+
+def FizzBuzzWhizz(p_a,p_b,p_c):
+  for x in xrange(1,100):
+    print x,"Fizz"[0 if str(x).find(str(p_a))>-1 else 4:] or "Fizz"[x%p_a*4:] + "Buzz"[x%p_b*4:] + "Whizz"[x%p_c*5:] or x;
+  # print ["Fizz"[0 if str(x).find('3')>-1 else 4:] or ("Fizz"[x%3*4:] + "Buzz"[x%5*4:] + "Whizz"[x%7*5:] or x) for x in xrange(1,101)];    
+
+FizzBuzzWhizz(3,5,6);
+
+# print "Fizz"[0 if str(10).find('1') > -1 else 4:] or "xx";
