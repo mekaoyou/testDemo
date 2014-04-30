@@ -14,3 +14,10 @@ def test_request(request):
 	# for k,v in values:
 	# 	html.append('<tr><td>%s</td><td>%s</td></tr>' %(k,v))
 	return render_to_response('request_meta.html',locals());
+
+def test_upload(request):
+	if request.method == "GET":#\xff\xd8\xff\xe0
+		print request.GET
+		for i in request.GET:
+			print i; 
+	return HttpResponse("server get success");
