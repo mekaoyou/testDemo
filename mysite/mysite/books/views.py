@@ -1,8 +1,9 @@
 from django.shortcuts import render_to_response
-# from django.http import HttpResponse
-from models import Book
+from django.http import HttpResponse
+from mysite.books.models import Book
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
+from django.template import RequestContext
 # Create your views here.
 
 # def search_form(request):
@@ -10,6 +11,9 @@ from django.http import HttpResponseRedirect
 
 
 def search(request):
+  '''
+  this is function docs
+  '''
   error = False;
   if 'q' in request.GET:
   	q = request.GET['q']
@@ -30,11 +34,14 @@ def contact(request):
   	if request.POST.get('email') and '@' not in request.POST['email']:
   		errors.append('Enter a valid e-mail address.');
   	if not errors:
-  		send_mail(
-  				request.POST['subject'],
-  				request.POST['message'],
-  				request.POST.get('email','noreply@example.com'),
-  				['mekaoyou4@163.com'],
-  			)
+  		# send_mail(
+  		# 		request.POST['subject'],
+  		# 		request.POST['message'],
+  		# 		request.POST.get('email','noreply@example.com'),
+  		# 		['mekaoyou4@163.com'],
+  		# 	)
   		return HttpResponseRedirect('/contact/thanks')
-  return render_to_response('contact_form.html',{'errors':errors})
+  return render_to_response('contact_form.html',{'errors':errors},context_instance=RequestContext(request))
+
+def thanks(request):
+  return HttpResponse("thanks")

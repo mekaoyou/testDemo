@@ -11,6 +11,7 @@
  </ul>
 {% endif %}
 <form action="" method="post">
+	{% csrf_token %}
   <p>Subject: <input type="text" name="subject"></p>
   <p>Your e-mail(optional): <input type="text" name="email"></p>
   <p>Message: <textarea name="message" rows="10" cols="50"></textarea></p>

@@ -17,4 +17,6 @@ urlpatterns = patterns('',
     url(r'^testup/$',test_upload),
     # url(r'^search-form/$',views.search_form),
     url(r'^search/$',views.search),
+    url(r'^contact/$',views.contact),
+    url(r'^contact/thanks/$',views.thanks),
 )
